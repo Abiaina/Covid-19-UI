@@ -28,11 +28,11 @@ export default class Home extends React.Component {
                         <Grid
                             container
                             direction="column"
-                            justify="space-evenly"
+                            justify="flex-start"
                             alignItems="center"
                         >
-                            <Grid item><Graph graphName={"January - April 2020"} graphImage={graph1} /></Grid>
-                            <Grid item><Graph graphName={"January - May 2020"} graphImage={graph2} /></Grid>
+                            <Grid item><Graph graphName={"January - April 2020"} graphHref={graph1}/></Grid>
+                            <Grid item><Graph graphName={"January - May 2020"} graphHref={graph2} /></Grid>
                         </Grid>
 
                     </Grid>
@@ -40,7 +40,7 @@ export default class Home extends React.Component {
                         <Grid
                             container
                             direction="column"
-                            justify="space-evenly"
+                            justify="flex-start"
                             alignItems="space-evenly"
                         >
                             <Grid item>Current Covid Cases: 200</Grid>

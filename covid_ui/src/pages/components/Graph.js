@@ -9,16 +9,36 @@ export default class Graph extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            graphOn: false,
         }
     }
 
+    toggle = () => {
+        this.setState({
+            graphOn: !this.state.graphOn,
+        })
+    }
+
+    showButton = () => {
+        return (
+            <Tooltip title={this.props.graphName}>
+                <Avatar alt={this.props.graphName} src="https://image.freepik.com/free-icon/graph_318-10306.jpg" />
+            </Tooltip>
+        )
+    }
+
+    showGraphData = () => {
+        return (
+            <Tooltip title={this.props.graphName}>
+                <img alt={this.props.graphName} src={this.props.graphHref} width="500px" />
+            </Tooltip>
+        )
+    }
 
     render() {
         return (
-            <Button>
-                <Tooltip title={this.props.graphName}>
-                    <Avatar alt={this.props.graphName} src="https://image.freepik.com/free-icon/graph_318-10306.jpg" />
-                </Tooltip>
+            <Button onClick={this.toggle}>
+                {this.state.graphOn ? this.showGraphData() : this.showButton()}
             </Button>
         )
     }
